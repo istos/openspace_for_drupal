@@ -1,0 +1,53 @@
+<?php
+
+
+/**
+ * Implementation of hook_ctools_plugin_api().
+ */
+function openspace_ctools_plugin_api($module, $api) {
+  if ($module == "openlayers") {
+    switch ($api) {
+      case 'openlayers_layers':
+        return array('version' => 1);
+      case 'openlayers_styles':
+        return array('version' => 1);
+    }
+  }
+}
+
+/**
+ * Implementaion of hook_layers_info().
+ */
+function openspace_layers_info() {
+  $info = array();
+    // Define info array
+  $info['openspace'] = array(
+    'name' => t('OpenSpace'),
+    'description' => t('OpenSpace'),
+    'projection' => array('27700'),
+    'baselayer' => TRUE,
+    'minzoom' => 0,
+    'maxzoom' => 11,
+  );
+  return $info;
+}
+
+
+/**
+ * Implementation of openlayers_layer_type
+ */
+function openspace_openlayers_layer_types() {
+  return array(
+    'openlayers_layer_type_openspace' => array(
+      'title' => t('OpenSpace'),
+      'description' => t('Ordnance Survey OpenSpace'),
+      'type' => 'layer',
+      'path' => drupal_get_path('module', 'openspace') .'/includes/layer_types',
+      'file' => 'openspace.inc',
+      'layer_type' => array(
+        'class' => 'openlayers_layer_type_openspace',
+        'parent' => 'openlayers_layer_type',
+      ),
+    ),
+  );
+}

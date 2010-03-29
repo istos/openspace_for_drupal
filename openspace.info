@@ -1,0 +1,5 @@
+name = OpenSpace
+description = OpenSpace Layer for OpenLayers
+core = 6.x
+version = 6.x-1.0-dev
+dependencies[] = openlayers
