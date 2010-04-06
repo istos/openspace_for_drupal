@@ -10,7 +10,7 @@ Upload the module to the appropriate Drupal directory and activate.
 
 To use the OpenSpace maps you first need to obtain an API key by visiting the OpenSpace website (http://openspace.ordnancesurvey.co.uk/)
 
-Subsequently via the OpenLayers interface add the OpenSpace Ordnance Layer by visiting 'http://test.istos.it/openspace/admin/build/openlayers/layers/add'
+Subsequently via the OpenLayers interface add the OpenSpace Ordnance Layer by visiting 'openspace/admin/build/openlayers/layers/add'
 
 Set the key by visiting 'admin/build/openlayers/layers/settings', unless you know what you are doing you don't really need to change the other settings.
 
