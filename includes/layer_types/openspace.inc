@@ -1,4 +1,5 @@
 <?php
+// $Id$
 
 /**
  * @file
@@ -19,7 +20,7 @@ class openlayers_layer_type_openspace extends openlayers_layer_type {
       'projection' => array('27700'),
       'key' => variable_get('openlayers_layers_openspace_api', ''),
       'base_url' => variable_get('openspace_server', ''),
-			'tile_server' => variable_get('openspace_ts', ''),
+      'tile_server' => variable_get('openspace_ts', ''),
       'osm' => FALSE,
       'baselayer' => TRUE,
       'layer_handler' => 'openspace'
@@ -85,9 +86,9 @@ class openlayers_layer_type_openspace extends openlayers_layer_type {
   /**
    * Render.
    */
-	function render(&$map) {
-  	drupal_add_js(drupal_get_path('module', 'openspace') .'/includes/layer_types/openspace.js');
-  	drupal_set_html_head('<script src="'. check_url(variable_get('proj4js', 'http://proj4js.org/lib/proj4js-compressed.js')).'"type="text/javascript"></script>');
-  	return $this->options;
+  function render(&$map) {
+    drupal_add_js(drupal_get_path('module', 'openspace') . '/includes/layer_types/openspace.js');
+    drupal_set_html_head('<script src="' . check_url(variable_get('proj4js', 'http://proj4js.org/lib/proj4js-compressed.js')) . '"type="text/javascript"></script>');
+    return $this->options;
   }
 }
