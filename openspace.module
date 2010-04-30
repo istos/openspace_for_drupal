@@ -18,7 +18,7 @@ function openspace_ctools_plugin_api($module, $api) {
 /**
  * Implementaion of hook_layers_info().
  */
-function openspace_layers_info() {
+function openspace_openlayers_layers() {
   $info = array();
     // Define info array
   $info['openspace'] = array(

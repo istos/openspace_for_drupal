@@ -10,6 +10,19 @@
  * OpenLayers OpenSpace Layer Type class
  */
 class openlayers_layer_type_openspace extends openlayers_layer_type {
+	
+	function __construct($layer = array(), $map = array()) {
+    parent::__construct($layer, $map);
+    if (isset($this->data)) {
+      $this->data += $this->options_init();
+    }
+    else {
+      $this->data = $this->options_init();
+    }
+  }
+ 
+
+
   /**
    * Provide initial values for options.
    */
